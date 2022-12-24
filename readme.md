@@ -13,7 +13,7 @@ Hướng dẫn chi tiết cho những bạn non-tech:
 1. Mở brower &rarr;đăng nhập vào portal &rarr; vào phần đánh giá môn học &rarr; chọn môn muốn đánh giá &rarr; chọn giảng viên (nếu có nhiều giảng viên).
 2. right click &rarr; chọn `inspect` (hoặc bấm `f12` cho lẹ) để mở cửa sổ devtool.
 3. Chọn tab `console`.
-4. Chọn những script dưới đây tùy theo mức độ muốn đánh giá &rarr; copy paste vào cửa sổ `console` &rarr; done 😘.
+4. Chọn những script dưới đây tùy theo mức độ muốn đánh giá &rarr; copy paste vào cửa sổ `console` &rarr; `enter` done 😘.
 5. Lặp lại với các môn khác.
 
 ### Script auto đánh giá all 5⭐ và click next 🥰
