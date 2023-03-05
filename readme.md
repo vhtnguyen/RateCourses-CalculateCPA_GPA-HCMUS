@@ -1,12 +1,14 @@
-# Script auto click Đánh giá môn học portal HCMUS
-
-Gửi cho trường những feedback ~~yêu thương~~ một cách nhanh chóng 🥰.
+# Script auto click đánh giá môn học và tính điểm trung bình tích lũy (GPA) trên portal HCMUS
 
 ## Reference
 
-Từ script của một member [Hội những người yêu mến khoa CNTT KHTN](https://www.facebook.com/groups/248509253599529)
+Lụm lặt từ [Hội những người yêu mến khoa CNTT KHTN](https://www.facebook.com/groups/248509253599529)
 
-## Usage
+## Đánh giá môn học
+
+Gửi cho trường những feedback ~~yêu thương~~ một cách nhanh chóng 🥰.
+
+### Usage
 
 Hướng dẫn chi tiết cho những bạn non-tech:
 
@@ -69,3 +71,45 @@ for (let i = 0; i < 8; i++) {
 }
 $("#btnSave").trigger("click");
 ```
+
+## Tính điểm trung bình tích lũy (GPA)
+
+Nắm bắt tình hình học tập 😎. Có thể tính GPA từng kì hoặc tất cả các kì.
+
+### Usage
+
+Hướng dẫn chi tiết cho những bạn non-tech:
+
+1. Mở web browser &rarr;đăng nhập vào portal &rarr; vào phần Quản lý học tập &rarr; chọn Tra cứu kết quả học tập &rarr; chọn năm học + học kì muốn tính điểm (hoặc chọn năm học =tất cả nếu muốn tính tất cả các kì)
+2. right click &rarr; chọn `inspect` (hoặc bấm `f12` cho lẹ) để mở cửa sổ devtool.
+3. Chọn tab `console`.
+4. Chọn script dưới đây &rarr; copy paste vào cửa sổ `console` &rarr; `enter` done 😘.
+
+Note: Những môn dưới đây sẽ không tính điểm vào GPA.
+- Những môn rớt (điểm tk <5) hoặc chưa có điểm.
+- GDQP, tiếng Anh, Thể dục, Tin học.
+
+```js
+var tinchi = document.querySelectorAll("td:nth-child(3)");
+var monhoc = document.querySelectorAll("td:nth-child(2)");
+var diem = document.querySelectorAll("td:nth-child(6)");
+var diemtren = 0,
+diemduoi = 0;
+for (var i = 1; i < tinchi.length; i++) {
+if (
+monhoc[i].innerText.includes("Thể dục") ||
+monhoc[i].innerText.includes("Anh văn") ||
+monhoc[i].innerText.includes("Giáo dục") ||
+monhoc[i].innerText.includes("Tin học") ||
+Number(diem[i].innerText) < 5
+) {
+continue;
+}
+diemtren += Number(tinchi[i].innerText) * Number(diem[i].innerText);
+diemduoi += Number(tinchi[i].innerText);
+}
+console.log("Tong tin chi : " + diemduoi);
+console.log("Diem trung binh : " + diemtren / diemduoi);
+```
+
+
