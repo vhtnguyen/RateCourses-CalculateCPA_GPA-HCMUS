@@ -72,9 +72,9 @@ for (let i = 0; i < 8; i++) {
 $("#btnSave").trigger("click");
 ```
 
-## Tính điểm trung bình tích lũy (GPA)
+## Tính điểm trung bình tích lũy (CPA/GPA)
 
-Nắm bắt tình hình học tập 😎. Có thể tính GPA từng kì hoặc tất cả các kì.
+Nắm bắt tình hình học tập 😎. Có thể tính GPA từng kì hoặc CPA tất cả các kì.
 
 ### Usage
 
@@ -85,7 +85,7 @@ Hướng dẫn chi tiết cho những bạn non-tech:
 3. Chọn tab `console`.
 4. Chọn script dưới đây &rarr; copy paste vào cửa sổ `console` &rarr; `enter` done 😘.
 
-Note: Những môn dưới đây sẽ không tính điểm vào GPA.
+Note: Những môn dưới đây sẽ bị skip không tính điểm.
 - Những môn rớt (điểm tk <5) hoặc chưa có điểm.
 - GDQP, tiếng Anh, Thể dục, Tin học.
 
